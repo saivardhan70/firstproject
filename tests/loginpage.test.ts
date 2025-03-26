@@ -24,3 +24,19 @@ test.describe('Login Page Tests', () => {               //Login Test cases
 
     });
 });
+
+
+test.describe('Invoices Test Cases', () =>{
+    test.beforeEach(async({page,baseURL}) =>{
+        page.goto(`${baseURL}`);
+    });
+
+    test('@smoke', async({page}) => {
+        const loginpage = new LoginPage(page);
+        await loginpage.login(Data.validData);
+        await loginpage.loginButton();
+        setTimeout(()=>{},2000);
+        await loginpage.invoicesTab();
+        await expect(page.locator(`//h1[@class='font-roboto text-[28px] font-semibold leading-[36px] text-left']`)).toBeVisible();
+    });
+});

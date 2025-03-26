@@ -18,4 +18,8 @@ export class LoginPage {
     async loginButton(){
         await this.page.click(this.locators.loginButton);
     }
+
+    async invoicesTab(){
+        await this.page.click(this.locators.invoicesTab);
+    }
 }
