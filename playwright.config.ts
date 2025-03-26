@@ -11,5 +11,11 @@ export default defineConfig({
         video: 'retain-on-failure', // Capture video on failure
         trace: 'on-first-retry', // Capture tracing data
     },
+    projects:[
+        {
+            name: 'smoke',
+            grep: /@smoke/,
+        },
+    ],
     reporter: [['list'], ['html', { open: 'never' }]], // Set reporters
 });
